@@ -6,7 +6,7 @@ from dotenv import load_dotenv
 # Load environment variables
 load_dotenv()
 
-app = Flask(_name_)
+app = Flask(__name__)
 
 # MySQL Configuration
 app.config['MYSQL_HOST'] = os.getenv('MYSQL_HOST')
@@ -144,7 +144,7 @@ def health():
     }
 
 
-if _name_ == '_main_':
+if __name__ == '_main_':
     app.run(
         host='0.0.0.0',
         port=5000,
